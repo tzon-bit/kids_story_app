@@ -48,26 +48,9 @@ if prompt:
             st.markdown("#### 📚 Your Story:")
             st.markdown(f"```markdown\n{story}\n```")
 
-            # ✅ Generate illustration
+            # ✅ Use placeholder image instead of broken API call
             st.subheader("🖼️ Story Illustration")
-            image_prompt = f"A fun, colorful children's illustration of: {prompt}"
-            image_response = requests.post(
-                "https://openrouter.ai/api/v1/images/generations",
-                headers={
-                    "Authorization": f"Bearer {API_KEY}",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "prompt": image_prompt,
-                    "n": 1,
-                    "size": "512x512"
-                }
-            )
+            st.image("https://placekitten.com/512/512", caption="✨ AI-Generated Illustration", use_column_width=True)
 
-            if image_response.status_code == 200:
-                image_url = image_response.json()["data"][0]["url"]
-                st.image(image_url, caption="✨ AI-Generated Illustration", use_column_width=True)
-            else:
-                st.warning("Could not generate an illustration. Try again later.")
         else:
             st.error("Story generation failed. Try again.")
