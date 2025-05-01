@@ -1,0 +1,39 @@
+
+# Ignore all Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment directory
+venv/
+
+# Ignore .env file or any file that contains sensitive keys
+.env
+secrets.toml
+
+# Ignore system and application-specific files/folders
+.DS_Store
+*.log
+*.db
+.idea/
+.vscode/
+.cache/
+.cache-*
+.dbus-keyrings/
+AppData/
+Contacts/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Pictures/
+Videos/
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+
+# Ignore temporary files
+*.swp
+*.swo
